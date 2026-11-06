@@ -1,148 +1,130 @@
-# Tajmil
+# 🌸 Tajmil Lwajh — Boutique beauté en ligne
 
-Tajmil is a PHP/MySQL-based fragrance e-commerce website focused on premium perfumes and beauty products. The project includes a storefront, cart and wishlist flows, user authentication, checkout, reviews, chatbot support, and an admin-oriented product management interface.
+Tajmil Lwajh est un site e-commerce développé en PHP et MySQL pour présenter et vendre des produits de beauté. Les visiteurs peuvent parcourir le catalogue, créer un compte, gérer un panier et une liste de souhaits, passer commande et consulter les avis. Le projet comprend également des outils de gestion et un chatbot d’assistance.
 
-## Features
+## 🚀 Démo
 
-- Product catalog with categories, brands, and pricing
-- Product detail pages with quantity and fragrance size selection
-- Shopping cart and wishlist management
-- User registration and login
-- Order checkout and order history
-- Product reviews and rating system
-- Contact form and newsletter signup
-- Floating chatbot assistant for customer support
-- Responsive design for desktop and mobile devices
-- Admin or management pages for inventory and order monitoring
+- **Boutique :** [amraoui2008.ifree.page](https://amraoui2008.ifree.page/)
+- **Accès d’administration :** [amraoui2008.ifree.page/admin/login.php](https://amraoui2008.ifree.page/admin/login.php)
 
-## Tech Stack
+Utilisez uniquement des identifiants qui vous ont été fournis de façon sécurisée. Les identifiants publiés dans d’anciens exemples ou messages ne doivent pas être utilisés en production : changez-les immédiatement s’ils sont actifs. Ne stockez jamais de mots de passe dans le README.
 
-- PHP
-- MySQL
-- HTML5 / CSS3 / JavaScript
-- AJAX for dynamic cart and review updates
-- Font Awesome icons
-- Responsive custom CSS
+## ✨ Fonctionnalités
 
-## Project Structure
+### Boutique
+
+- Catalogue, recherche et navigation par catégories et marques
+- Pages de produits et choix de quantité/format
+- Panier et liste de souhaits
+- Inscription, connexion et profil utilisateur
+- Passage de commande et historique des commandes
+- Avis et notes des clients
+- Formulaire de contact et newsletter
+- Chatbot d’assistance en français et en darija
+- Interface responsive
+
+### Gestion
+
+Le dépôt contient des outils de gestion pour les produits, catégories, marques, stocks, commandes, utilisateurs, avis, coupons, statistiques, exports et sauvegardes. Plusieurs de ces scripts se trouvent à la racine du dépôt, et non dans un dossier `admin/`.
+
+## 🧰 Technologies
+
+- PHP avec PDO
+- MySQL ou MariaDB
+- HTML, CSS et JavaScript
+- Font Awesome et Google Fonts
+
+## 📁 Structure du projet
 
 ```text
 Tajmil/
 ├── assets/
 │   ├── css/
-│   ├── js/
 │   ├── images/
+│   ├── js/
 │   └── uploads/
-├── pages/
-│   ├── home.php
-│   ├── cart.php
-│   ├── checkout.php
-│   ├── login.php
-│   ├── register.php
-│   ├── orders.php
-│   └── ...
-├── php_files/
-│   ├── config.php
-│   ├── login.php
-│   ├── register.php
-│   ├── add_to_cart.php
-│   ├── get_cart.php
-│   ├── update_cart.php
-│   ├── remove_cart.php
-│   ├── checkout.php
-│   ├── add_review.php
-│   ├── get_reviews.php
-│   ├── chatbot_widget.php
-│   └── contact.php
-├── index.php
+├── pages/                 # Pages de la boutique
+├── php_files/             # Configuration et traitements PHP
+├── index.php              # Point d’entrée du site
 ├── header.php
 ├── footer.php
-├── auth.php
-├── analytics.php
-├── orders.php
-├── categories.php
+├── analytics.php           # Outils de gestion et statistiques
 ├── brands.php
+├── categories.php
 ├── coupons.php
-├── newsletter.php
 ├── inventory.php
-├── export_products.php
-├── export_orders.php
-├── export_reviews.php
-├── export_users.php
-├── README.md
-└── ...
+├── orders.php
+├── order-details.php
+├── crud_users.php
+├── newsletter.php
+├── logs.php
+├── backup.php
+└── export_*.php            # Outils d’export
 ```
 
-## Requirements
+Les pages client disponibles incluent notamment `home.php`, `products.php`, `product-details.php`, `cart.php`, `checkout.php`, `orders.php`, `wishlist.php`, `profile.php`, `login.php`, `register.php`, `about.php`, `review.php` et `contact.php` sous `pages/`.
 
-- PHP 7.4+ or newer
-- MySQL / MariaDB
-- Apache or Nginx web server
-- Composer is not required for this project
+## ⚙️ Installation locale
 
-## Local Setup
+### Prérequis
 
-1. Clone the repository:
+- PHP 7.4 ou plus récent
+- MySQL ou MariaDB
+- Apache, Nginx ou un environnement local tel que XAMPP
+- L’extension PHP PDO MySQL
 
-```bash
-git clone https://github.com/mrawym636-sketch/Tajmil.git
-```
+L’extension GD peut être nécessaire pour certains outils de génération d’images.
 
-2. Move the project into your local web server folder, for example:
+### Étapes
 
-```text
-C:/xampp/htdocs/Tajmil
-```
+1. Clonez le dépôt et placez-le dans le répertoire servi par votre serveur web :
 
-or
+   ```bash
+   git clone https://github.com/mrawym636-sketch/Tajmil.git
+   cd Tajmil
+   ```
 
-```text
-/var/www/html/Tajmil
-```
+2. Créez une base de données MySQL pour l’application. La configuration actuelle de `php_files/config.php` utilise `khalid` comme nom de base de données.
 
-3. Create or configure your MySQL database.
+3. Configurez les paramètres de connexion dans `php_files/config.php` selon votre environnement :
 
-4. Edit the database credentials in `php_files/config.php`:
+   ```php
+   $host = 'localhost';
+   $dbname = 'khalid';
+   $username = 'root';
+   $password = '';
+   ```
 
-```php
-$host = 'localhost';
-$dbname = 'khalid';
-$username = 'root';
-$password = '';
-```
+   Remplacez ces valeurs par vos propres identifiants. Pour un hébergement public, ne conservez pas les identifiants de développement et ne rendez pas le fichier de configuration accessible au public.
 
-5. Start Apache and MySQL.
+4. Configurez les tables nécessaires à partir du schéma SQL de votre installation, s’il est disponible. Aucun fichier `khalid.sql` n’est présent à la racine du dépôt ; ne supposez donc pas qu’une base de données vide sera entièrement initialisée automatiquement.
 
-6. Open the application in a browser:
+5. Démarrez Apache et MySQL, puis ouvrez le site, par exemple :
 
-```text
-http://localhost/Tajmil/
-```
+   ```text
+   http://localhost/Tajmil/
+   ```
 
-## Database Notes
+## 🔐 Sécurité et déploiement
 
-The project uses a MySQL database named `khalid` by default. Some scripts create tables automatically if they do not exist, including tables for products, orders, reviews, and messages.
+- Utilisez des mots de passe uniques et forts pour les comptes administrateur et base de données.
+- Changez ou désactivez tout compte de démonstration avant le déploiement.
+- Ne commitez pas de secrets, de sauvegardes de base de données ou de données personnelles.
+- Vérifiez les permissions d’écriture nécessaires pour `assets/uploads/`.
+- Les scripts d’installation, de diagnostic, de sauvegarde et de création d’administrateur ne devraient pas rester accessibles publiquement après leur utilisation.
+- Testez les parcours de connexion, commande et administration dans un environnement de développement avant toute mise en production.
 
-## Main Entry Points
+## 🤝 Contribution
 
-- `index.php` - landing/entry page
-- `pages/home.php` - storefront home page
-- `pages/cart.php` - cart details
-- `pages/checkout.php` - checkout form
-- `pages/login.php` - login page
-- `pages/register.php` - registration page
-- `pages/orders.php` - order list
+1. Forkez le dépôt.
+2. Créez une branche pour vos changements : `git checkout -b feature/ma-fonctionnalite`.
+3. Commitez vos changements.
+4. Poussez la branche et ouvrez une Pull Request.
 
-## Notes
+## 📄 Licence
 
-- This repository contains both customer-facing storefront logic and admin/management utilities.
-- Some scripts rely on a specific folder structure and relative paths; keep the project root intact when deploying.
-- The design is highly customized and includes a premium, luxury fragrance aesthetic.
+Aucun fichier de licence n’a été identifié dans le dépôt. En l’absence de licence, les droits d’utilisation et de redistribution ne sont pas accordés automatiquement. Contactez le propriétaire du projet pour toute réutilisation.
 
-## License
+## 📬 Contact
 
-This project does not currently include a license file. Please check with the repository owner before commercial reuse or redistribution.
-
-## Contact
-
-For questions about the project, please use the repository issue tracker or contact the project maintainer through the GitHub repository.
+Pour les questions relatives au projet, ouvrez une issue dans ce dépôt ou contactez son mainteneur via GitHub.
