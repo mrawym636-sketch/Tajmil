@@ -7,7 +7,7 @@ Tajmil Lwajh est un site e-commerce développé en PHP et MySQL pour présenter 
 - **Boutique :** [amraoui2008.ifree.page](https://amraoui2008.ifree.page/)
 - **Accès d’administration :** [amraoui2008.ifree.page/admin/login.php](https://amraoui2008.ifree.page/admin/login.php)
 
-Utilisez uniquement des identifiants qui vous ont été fournis de façon sécurisée. Les identifiants publiés dans d’anciens exemples ou messages ne doivent pas être utilisés en production : changez-les immédiatement s’ils sont actifs. Ne stockez jamais de mots de passe dans le README.
+Utilisez uniquement des identifiants qui vous ont été fournis de façon sécurisée. Ne publiez pas de mots de passe dans le README. Si les identifiants de démonstration mentionnés précédemment sont actifs, changez-les immédiatement.
 
 ## ✨ Fonctionnalités
 
@@ -95,7 +95,7 @@ L’extension GD peut être nécessaire pour certains outils de génération d�
    $password = '';
    ```
 
-   Remplacez ces valeurs par vos propres identifiants. Pour un hébergement public, ne conservez pas les identifiants de développement et ne rendez pas le fichier de configuration accessible au public.
+   Remplacez ces valeurs par vos propres identifiants. Pour un hébergement public, n’utilisez pas les identifiants de développement et ne rendez pas le fichier de configuration accessible au public.
 
 4. Configurez les tables nécessaires à partir du schéma SQL de votre installation, s’il est disponible. Aucun fichier `khalid.sql` n’est présent à la racine du dépôt ; ne supposez donc pas qu’une base de données vide sera entièrement initialisée automatiquement.
 
